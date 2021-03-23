@@ -1,5 +1,5 @@
 import React from 'react'
-const reduer = (state, action) => {
+const reducer = (state, action) => {
   switch (action.type) {
     case 'add':
       return { ...state, count: state.count + 1 }
@@ -10,4 +10,4 @@ const reduer = (state, action) => {
 let initialState = {count: 0, info: {count: 0}}
 const context = React.createContext({})
 
-export {reduer, initialState, context}
+export {reducer, initialState, context}
