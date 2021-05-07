@@ -3,6 +3,7 @@ import React, { useReducer } from 'react';
 import A from './components/A';
 import B from './components/B';
 import C from './components/C';
+import D from './components/D';
 import { reducer, initialState } from './reducer/ReducerComponent';
 import context from './context';
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <A></A>
         <B></B>
         <C></C>
+        <D></D>
       </div>
     </context.Provider>
   );
