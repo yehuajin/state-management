@@ -1,13 +1,16 @@
-import React from 'react'
-import { observer, inject} from 'mobx-react'
-function A({store}) {
-  const {setCount, count, countLength} = store
+import React from 'react';
+import { observer, inject } from 'mobx-react';
+function A({ input }) {
+  const { setString, string, stringLength } = input;
+  console.log('A');
   return (
     <div>
-      <input type="text" value={count} onChange={setCount} />
-      <div>字符串长度: {countLength}: {count}</div>
+      <input type='text' value={string} onChange={setString} />
+      <div>
+        字符串长度: {stringLength}: {string}
+      </div>
     </div>
   );
 }
 
-export default inject('store')(observer(A)) 
+export default inject('input')(observer(A));

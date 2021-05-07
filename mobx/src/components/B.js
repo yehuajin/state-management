@@ -1,10 +1,9 @@
-import React from 'react'
-import { observer, inject} from 'mobx-react'
+import React from 'react';
+import { observer, inject } from 'mobx-react';
 
-function B({store}) {
-  return (
-    <div>B组件同步的count:{store.count}</div>
-  );
+function B({ input }) {
+  console.log('B');
+  return <div>B组件同步的string:{input.string}</div>;
 }
 
-export default inject('store')(observer(B)) 
+export default inject('input')(observer(B));

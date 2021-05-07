@@ -7,7 +7,7 @@ import { Provider} from 'mobx-react'
 import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider {...store}>
       <App /> 
     </Provider>
   </React.StrictMode>,
