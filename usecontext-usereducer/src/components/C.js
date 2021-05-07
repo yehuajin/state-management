@@ -6,7 +6,7 @@ function C() {
   console.log('render c');
   return (
     <div>
-      {state.info.count}
+      {state.info?.count}
       <button
         onClick={() => {
           dispatch({ type: 'info' });

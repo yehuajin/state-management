@@ -4,10 +4,10 @@ import A from './components/A';
 import B from './components/B';
 import C from './components/C';
 import D from './components/D';
-import { reducer, initialState } from './reducer/ReducerComponent';
+import { reducer, initState } from './reducer';
 import context from './context';
 function App() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initState);
   return (
     <context.Provider value={{ state, dispatch }}>
       <div style={{ textAlign: 'center', lineHeight: '30px' }}>
