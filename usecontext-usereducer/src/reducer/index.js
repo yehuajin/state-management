@@ -15,5 +15,5 @@ const reducer = (state = {}, action) => {
   });
   return changeFlag ? { ...state } : state;
 };
-const initState = reducer(undefined, {});
-export { reducer, initState };
+const initialState = reducer(undefined, {});
+export { reducer, initialState };
