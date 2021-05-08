@@ -1,17 +1,29 @@
-import React from 'react'
-import {
-  useRecoilValue,
-} from 'recoil';
-import {countState} from '../atom'
+import React from 'react';
+import { useRecoilState, useResetRecoilState } from 'recoil';
+import { tempFahrenheit, tempCelsius } from '../atom/temp';
 
 function B() {
-  // 获取值
-  const count = useRecoilValue(countState);
+  const [tempF, setTempF] = useRecoilState(tempFahrenheit);
+  const [tempC, setTempC] = useRecoilState(tempCelsius);
+  const resetTemp = useResetRecoilState(tempCelsius);
+
+  const addTenCelsius = () => setTempC(tempC + 10);
+  const addTenFahrenheit = () => setTempF(tempF + 10);
+  const reset = () => resetTemp();
+
   return (
     <div>
-      count：{count}
+      Temp (Celsius): {tempC}
+      <br />
+      Temp (Fahrenheit): {tempF}
+      <br />
+      <button onClick={addTenCelsius}>Add 10 Celsius</button>
+      <br />
+      <button onClick={addTenFahrenheit}>Add 10 Fahrenheit</button>
+      <br />
+      <button onClick={reset}>Reset</button>
     </div>
   );
 }
 
-export default B
+export default B;
