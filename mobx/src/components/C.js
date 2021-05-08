@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { observer, inject } from 'mobx-react';
 import { autorun, reaction, when } from 'mobx';
-function C({ count }) {
-  console.log('C');
+function C({ count, input }) {
+  console.log('C', input.data); // 只要data改变才会重新渲染该组件
   useEffect(() => {
     autorun((reaction) => {
       console.log(count.count);
@@ -34,4 +34,4 @@ function C({ count }) {
   );
 }
 
-export default inject('count')(observer(C));
+export default inject('count', 'input')(observer(C));

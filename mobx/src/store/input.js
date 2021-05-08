@@ -7,6 +7,7 @@ class Store {
   }
   rootStore = {};
   string = '';
+  data = '';
   get stringLength() {
     return this.string.length;
   }
