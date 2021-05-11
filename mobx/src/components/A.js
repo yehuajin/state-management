@@ -2,6 +2,7 @@ import React from 'react';
 import { observer, inject } from 'mobx-react';
 function A({ input }) {
   const { setString, string, stringLength } = input;
+  input.string = '222'; // 可变数据
   console.log('A');
   return (
     <div>
